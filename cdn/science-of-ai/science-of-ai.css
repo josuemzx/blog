@@ -1,0 +1,237 @@
+:root {
+  /* Colors */
+  --color--whitegray: #f7fbfb;
+  --color--lightgray: #E7EAED;
+  --color--midgray: #c5c5d2;
+  --color--darkgray: #6e6e80;
+  --color--black: #111;
+  --color--red: #ef4146;
+  --color--blue: #27b5ea;
+}
+
+/* charts */
+.charts__row {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin-left: -0.75em;
+  margin-right: -0.75em;
+}
+
+.charts__col {
+  padding-left: 0.75em;
+  padding-right: 0.75em;
+  width: 33.333333%;
+}
+@media (max-width: 1080px) {
+  .charts__col {
+    width: 50%;
+  }
+  .charts__col:first-of-type {
+    width: 66.666666%;
+    margin-left: 16.666666%;
+    margin-right: 16.666666%;
+  }
+}
+@media (max-width: 680px) {
+  .charts__col:first-of-type {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .charts__col {
+    width: 100%;
+  }
+}
+
+.charts {
+  width: 100%;
+  text-align: center;
+  line-height: 1.4;
+}
+
+.charts__title,
+.charts__charts {
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 25px;
+}
+
+.charts__title {
+  max-width: 655px;
+  margin-bottom: 1.5em;
+}
+
+@media (max-width: 1080px) {
+  .charts__slider-wrap {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 3;
+    background-color: #fff;
+  }
+  .is-nav-fixed.is-nav-shown .charts__slider-wrap {
+    top: 2.75rem;
+  }
+}
+
+.charts__slider {
+  max-width: 625px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.charts__charts {
+  max-width: 1340px;
+  margin-top: 2em;
+}
+
+.chart {
+  position: relative;
+  text-align: center;
+  width: 100%;
+}
+
+.chartBackground {
+  fill: var(--color--whitegray);
+}
+
+.title.label {
+  font-weight: bold;
+  fill: var(--color--black);
+  letter-spacing: 0.0125em;
+}
+
+.charts .chartCaption.label {
+  font-size: 0.833333em;
+  fill: var(--color--black);
+}
+
+.x.label,
+.y.label {
+  font-size: 0.833333em;
+  fill: var(--color--darkgray);
+  letter-spacing: 0.0125em;
+}
+
+.gridlines line,
+.gridlines .domain {
+  stroke: var(--color--lightgray);
+}
+
+.axis {
+  font-family: inherit;
+  font-size: 0.8em;
+}
+
+.axis line,
+.domain {
+  stroke: var(--color--midgray);
+}
+
+.tick line,
+.domain {
+  shape-rendering: crispEdges;
+}
+
+.axis text {
+  fill: var(--color--darkgray);
+}
+
+.line.dashed {
+  stroke-dasharray: 4,4;
+}
+
+.line {
+  fill: none;
+  stroke: var(--color--lightgray);
+  stroke-width: 0.06em;
+  mix-blend-mode: multiply;
+}
+
+.line-overlay {
+  fill: none;
+}
+
+.line[data-active="0"] {
+  stroke-opacity: 0.75;
+}
+
+.line[data-active="1"] {
+  stroke: var(--color--blue);
+}
+
+.line-label {
+  font-size: 0.8em;
+  fill: var(--color--black);
+}
+
+.line-label {
+  display: none;
+}
+
+.line.dashed[data-hover="1"] {
+  stroke: var(--color--red);
+}
+
+.dot[data-hover="1"] {
+  fill: var(--color--red);
+  fill-opacity: 0.5;
+}
+
+.dot {
+  fill: var(--color--lightgray);
+}
+
+.dot[data-active="1"] {
+  fill: var(--color--blue);
+  fill-opacity: 1;
+}
+
+.fit-group[data-hover="0"] .line {
+  stroke-opacity: 0.5;
+}
+
+.fit-group[data-hover="1"] .line {
+  stroke: var(--color--red);
+}
+
+.fit-group[data-hover="1"] .line-label {
+  display: unset;
+  cursor: default;
+}
+
+.h-line {
+  stroke: var(--color--red);
+}
+
+/*slider*/
+.track {
+  stroke-width: 10px;
+  stroke: #DBE8E8;
+}
+
+.track-overlay {
+  pointer-events: stroke;
+  cursor: ew-resize;
+}
+
+.track,
+.track-inset,
+.track-overlay {
+  stroke-linecap: round;
+}
+
+.slider-handle {
+  fill: var(--color--blue);
+}
+
+.slider-ticks,
+.slider-label {
+  fill: var(--color--darkgray);
+  font-size: 0.833333em;
+}
