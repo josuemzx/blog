@@ -240,10 +240,24 @@ little" />
       <div class="js-post-content">
         <!--kg-card-begin: markdown--><p>Este estudio pretende descubrir la carga sentimental que poseen los tweets de Pedro Castillo y cuáles logran una mayor interacción con la población, para ello utilizaremos el entorno y lenguaje de programación R.</p>
 <div class="btns">
-<p><a href="https://github.com/openai/triton" class="btn btn-padded btn-dark btn-circle icon-code">View Code</a><a href="https://triton-lang.org/" class="btn btn-padded btn-dark btn-circle icon-papers">Read Documentation</a></p>
+<p><a href="https://github.com/openai/triton" class="btn btn-padded btn-dark btn-circle icon-code">View Code</a></p>
 </div>
 <hr>
-<h2 id="the-challenges-of-gpu-programming">The Challenges of GPU Programming</h2>
+<h2 id="Herramientas">Herramientas</h2>
+<ul>
+<li>R</li>
+<li>rtweet</li>
+<li>ggplot2</li>
+</ul>
+<h2 id="Recolección-de-datos">Recolección de datos</h2>
+<p>Los datos serán obtenidos mediante la API de Twitter con la librería rtweet, para ello es necesario registrarse en la aplicación y obtener las credenciales en la sección desarrolladores, de forma predeterminada solo se puede acceder a información pública de los tweets y usuarios.</p>
+
+<pre><code class="language-r">twitter_tokens 
+  <- create_token(app = "", consumer_key = "", consumer_secret = "")
+ </code></pre>
+<div class="caption">Acceso a la API.</div>
+
+
 <p><span class="small-caps-alt">Novel research ideas</span> in the field of Deep Learning are generally implemented using a combination of native framework operators. While convenient, this approach often requires the creation (and/or movement) of many temporary tensors, which can hurt the performance of neural networks at scale. These issues can be mitigated by writing specialized GPU kernels, but doing so can be surprisingly difficult due to the many intricacies of GPU programming.<span class="js-rfref" data-id="gray-2017"></span><span class="js-rfref" data-id="kerr-2020"></span><span class="js-rfref" data-id="yan-2020"></span> And, although a variety of systems have recently emerged<span class="js-rfref" data-id="cutlass"></span><span class="js-rfref" data-id="tvm"></span> to make this process easier, we have found them to be either too verbose, lack flexibility or generate code noticeably slower than our hand-tuned baselines. This has led us to extend and improve Triton<span class="js-rfref" data-id="tillet-2019"></span>, a recent language and compiler whose original creator now works at OpenAI.</p>
 <h2 id="the-challenges-of-gpu-programming">The Challenges of GPU Programming</h2>
 <p>The architecture of modern GPUs can be roughly divided into three major components—DRAM, SRAM and ALUs—each of which must be considered when optimizing CUDA code:</p>
