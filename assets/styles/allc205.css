@@ -1610,7 +1610,7 @@ pre code {
 
 a {
     text-decoration: none;
-    color: rgb(0, 0, 0);
+    color: #000
 }
 
 .content a:not(.btn):not(.no-style):not(.faded):not(.faded-heavy):not(.faded-light):not(.faded-xlight):not(.faded-xxlight) {
@@ -8073,8 +8073,7 @@ label+.form-control-wrap {
 
 .mb-1\.5,
 .my-1\.5 {
-    margin-bottom: 2.1rem !important;
-    color: #fff;
+    margin-bottom: 2.1rem !important
 }
 
 .ml-1\.5,
