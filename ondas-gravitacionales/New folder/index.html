@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<!--
+
+    888                                      888   |
+    888  e88~-_   d88~\ 888  888  e88~~8e    888___| 888  888   /~~~8e  888-~88e-~88e   /~~~8e  888-~88e
+    888 d888   i C888   888  888 d888  88b   888   | 888  888       88b 888  888  888       88b 888  888
+    888 8888   |  Y88b  888  888 8888__888   888   | 888  888  e88~-888 888  888  888  e88~-888 888  888
+|   88P Y888   '   888D 888  888 Y888    ,   888   | 888  888 C888  888 888  888  888 C888  888 888  888
+ \__8"   "88_-~  \_88P  "88_-888  "88___/    888   | "88_-888  "88_-888 888  888  888  "88_-888 888  888
+
+-->
+<html lang="es">
+
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Análisis de sentimiento e interacción en los Tweets de Pedro Castillo Terrones</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <link rel="stylesheet" type="text/css" href="../../assets/styles/allc205.css?v=faca4a392d" />
+  
+
+    
+    <meta property="og:site_name" content="Josue Huaman" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Análisis de sentimiento e interacción en los Tweets de Pedro Castillo Terrones" />
+    <meta property="og:description" content="Este estudio pretende descubrir la carga sentimental que poseen los tweets de Pedro Castillo y cuáles logran una mayor interacción con la población, para ello utilizaremos el entorno y lenguaje de programación R." />
+   
+   
+    <meta property="og:url" content="https://josuemzx.github.io/blog/geopolitica/An%C3%A1lisis%20de%20sentimiento%20e%20interacci%C3%B3n%20en%20los%20Tweets%20de%20Pedro%20Castillo%20Terrones/index.html" />
+    <meta property="og:image" content="../../geopolitica/Análisis de sentimiento e interacción en los Tweets de Pedro Castillo Terrones/00.jpg" />
+    <meta property="article:published_time" content="2021-07-28T16:00:00.000Z" />
+    <meta property="article:modified_time" content="2021-08-05T19:05:41.000Z" />
+    <meta property="article:tag" content="Geopolítica" />
+
+    
+    <meta property="article:publisher" content="https://www.facebook.com/josuehuaman" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Análisis de sentimiento e interacción en los Tweets de Pedro Castillo Terrones" />
+    <meta name="twitter:description" content="Este estudio pretende descubrir la carga sentimental que poseen los tweets de Pedro Castillo y cuáles logran una mayor interacción con la población, para ello utilizaremos el entorno y lenguaje de programación R." />
+
+        
+    <meta name="generator" content="Ghost 5.22" />
+    <link rel="alternate" type="application/rss+xml" title="Josue Huaman" href="../../rss/index.html" />
+    <script defer src="../../cdn.jsdelivr.net/ghost/portal%40_2.19/umd/portal.min.js""></script>
+    
+    <style id="gh-members-styles">.gh-post-upgrade-cta-content,
+.gh-post-upgrade-cta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-align: center;
+    width: 100%;
+    color: #ffffff;
+    font-size: 16px;
+}
+
+.gh-post-upgrade-cta-content {
+    border-radius: 8px;
+    padding: 40px 4vw;
+}
+
+.gh-post-upgrade-cta h2 {
+    color: #ffffff;
+    font-size: 28px;
+    letter-spacing: -0.2px;
+    margin: 0;
+    padding: 0;
+}
+
+.gh-post-upgrade-cta p {
+    margin: 20px 0 0;
+    padding: 0;
+}
+
+.gh-post-upgrade-cta small {
+    font-size: 16px;
+    letter-spacing: -0.2px;
+}
+
+.gh-post-upgrade-cta a {
+    color: #ffffff;
+    cursor: pointer;
+    font-weight: 500;
+    box-shadow: none;
+    text-decoration: underline;
+}
+
+.gh-post-upgrade-cta a:hover {
+    color: #ffffff;
+    opacity: 0.8;
+    box-shadow: none;
+    text-decoration: underline;
+}
+
+.gh-post-upgrade-cta a.gh-btn {
+    display: block;
+    background: #ffffff;
+    text-decoration: none;
+    margin: 28px 0 0;
+    padding: 8px 18px;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.gh-post-upgrade-cta a.gh-btn:hover {
+    opacity: 0.92;
+}</style>
+    <script defer src="../../cdn.jsdelivr.net/ghost/sodo-search%40_1.1/umd/sodo-search.min.js" ></script>
+    <script defer src="../../public/cards.minc205.js?v=faca4a392d"></script>
+    <link rel="stylesheet" type="text/css" href="../../public/cards.minc205.css?v=faca4a392d">
+    <script defer src="../../public/member-attribution.minc205.js?v=faca4a392d"></script><style>:root {--ghost-accent-color: #15171A;}</style>
+</head>
+
+<body>
+  
+<article class="post" id="post-triton">
+
+     
+  
+  <header>
+    <nav class="nav container" data-url="/tags/geopolítica/">
+    <div class="nav-row row align-items-center">
+      <div class="d-none d-sm-block col-sm nav-symbol-wrap">
+        <a href="../../index.html" class="nav-symbol"><IMG SRC="../../cdn/Logo-josue-b.png"></a>
+      </div>
+      <div class="col col-sm-auto">
+        <ul class="d-flex flex-row align-items-center justify-content-between small-caps">
+          <div class="d-sm-none nav-symbol-wrap">
+            <a href="../../index.html" class="nav-symbol"><IMG SRC="../../cdn/Logo-josue-bM.png"></a>
+          </div>               
+  
+          <li class="ml-sm-1.75" style="margin-top:0.5px"><a class="nav-link " href="https://josuem.substack.com/p/recursos-abiertos-para-estudiar-data" data-slug="about">Cursos</a></li>
+  
+           <li class="ml-sm-1.75" style="margin-top:0.5px"><a class="nav-link " href="https://josuem.substack.com/p/libros" data-slug="about">Libros</a></li>
+  
+           <li class="ml-sm-1.75" style="margin-top:0.5px"><a class="nav-link " href="../cdn/media/RESUME.pdf" data-slug="about">CV</a></li>
+  
+           <li class="ml-sm-1.75" style="margin-top:0.5px"><a class="nav-link " href="../../about/index.html" data-slug="about">About</a></li>
+         </ul>
+    </div>
+  </div>
+</nav>
+
+
+  
+          <div class="container mt-5">
+    <div class="row">
+      
+        <div class="col-12 col-md-9 col-lg-8 col-xl-12 text-xl-center">
+          <div class="max-width-xxwide mx-xl-auto">
+            <h1 class="
+   balance-text
+  
+  
+  
+  
+  
+  
+  
+   mb-0.75 mb-xl-2.25
+  ">Análisis de sentimiento e interacción en los Tweets de Pedro Castillo Terrones</h1>
+          </div>
+        </div>
+    </div>
+      <div class="post-header-no-excerpt-spacer"></div>
+    
+  </div>
+
+  
+</header>
+
+  <section class="container">
+  <div class="row">
+    <section class="content">
+      
+            <aside class="aside">  <div class="post-header-date small-copy color-fg-50 post-header-date--content mb-1.5">
+    <time datetime="2021-07-28">Octubre 18, 2022</time>
+    <div class="reading-time">10 minute read</div>
+  </div>
+</aside>
+      
+      <div class="js-post-content">
+      <p>Este estudio pretende descubrir la carga sentimental que poseen los tweets de Pedro Castillo y cuáles logran una mayor interacción con la población, para ello utilizaremos el entorno y lenguaje de programación R.</p>
+<div class="btns">
+<p><a href="https://github.com/josuemzx/SentimentAnalysis-tweets" class="btn btn-padded btn-dark btn-circle icon-code">Ver código</a></p>
+</div>
+<hr>
+
+<div id="1">
+  <div class="wide mt-2 mb-0">
+  <div class="mx-xl-auto" style="max-width:695px">
+  <img class="d-none d-sm-block mb-0" src="../../geopolitica/Análisis de sentimiento e interacción en los Tweets de Pedro Castillo Terrones/00.jpg">
+  <img class="d-block d-sm-none mb-0" src="../../geopolitica/Análisis de sentimiento e interacción en los Tweets de Pedro Castillo Terrones/00.jpg">
+  </div>
+  </div>
+  <div class="caption mb-2 mt-0.5">Pedro Castillo Terrones</div>
+  </div>
+
+<h2 id="Herramientas">Herramientas</h2>
+<ul>
+<li>R</li>
+<li>rtweet</li>
+<li>ggplot2</li>
+</ul>
+<h2 id="Recolección-de-datos">Recolección de datos</h2>
+<p>Los datos serán obtenidos mediante la API de Twitter con la librería rtweet, para ello es necesario registrarse en la aplicación y obtener las credenciales en la sección desarrolladores, de forma predeterminada solo se puede acceder a información pública de los tweets y usuarios.</p>
+
+<pre><code class="language-r">twitter_tokens 
+  <- create_token(app = "", consumer_key = "", consumer_secret = "")
+ </code></pre>
+<div class="caption">Acceso a la API.</div>
+
+
+<p>Una vez autenticados pasamos a recolectar los tweets.</p>
+<pre><code class="language-r">castillovar <- get_timeline("PedroCastilloTe", n = 4000)</code></pre>
+
+<p>Seleccionaremos la variable de interés y guardamos los datos en un archivo .csv:</p>
+<pre><code class="language-r">castillovar <- castillovar[c("created_at", "text", "favorite_count", "retweet_count")]</code></pre>
+
+<pre><code class="language-r">
+num_rows = nrow(castillovar)
+  
+#Crear vector de columna ID
+X <- c(1:num_rows)
+   
+#Enlazar la columna ID al marco de datos
+castillovar <- cbind(X , castillovar)</code></pre>
+
+<pre><code class="language-r">write_as_csv(castillovar, "castillovar.csv")</code></pre>
+
+<p>Con 'readr' cargamos el archivo .csv</p>
+<pre><code class="language-r">library(readr)
+
+castillovar <- read_csv("castillovar.csv")
+castillovar</code></pre>
+
+<h2 id="Preparacion-de-los-datos">Preparación de los datos</h2>
+
+<p>Una pieza central para un análisis de texto (text mining) es el tokenizado. La tokenización es una forma de separar un fragmento de texto en unidades más pequeñas llamadas tokens. Aquí, los tokens pueden ser palabras, caracteres o subpalabras. Por lo tanto, la tokenización se puede clasificar ampliamente en 3 tipos: tokenización de palabra, carácter y subpalabra (caracteres n-grama).</p>
+<p>Utilizaremos 'string' y 'stringr' para la manipulación de caracteres, 'dplyr' para la manipulación del data frame, magrittr para el uso de pipes y tidytext para el tokenizado y el análisis de texto.</p>
+
+<pre><code class="language-r">library(stringi)
+library(stringr)
+library(dplyr)
+library(magrittr)
+library(tidytext)
+
+# Quitamos los acentos a los tweets.
+castillovar$text <- stri_trans_general(castillovar$text, "Latin-ASCII")
+
+# Limpiamos la variable text de algunos elementos innecesarios y  tokenizamos.
+replace_reg <- "https://t.co/[A-Za-z\\d]+|http://[A-Za-z\\d]+|&amp;|&lt;|&gt;|RT|https"
+unnest_reg <- "([^A-Za-z_\\d#@']|'(?![A-Za-z_\\d#@]))"
+castillovar_t <- castillovar %>% 
+  filter(!str_detect(text, "^RT")) %>%
+  mutate(text = str_replace_all(text, replace_reg, "")) %>%
+  unnest_tokens(word, text, token = "regex", pattern = unnest_reg)  # Tokenizado
+rm(replace_reg, unnest_reg) 
+
+</code></pre>
+
+<p>El resultado es DataFrame más grande, de 42751 observaciones, Donde se reemplaza la columna (variable) <i>text</i> por <i>word</i>, manteniendo la variable X como ID:</p>
+<pre><code class="language-r">str(castillovar_t)</code></pre>
+
+<div id="1">
+  <div class="wide mt-2 mb-0">
+  <div class="mx-xl-auto" style="max-width:695px">
+  <img class="d-none d-sm-block mb-0" src="../../geopolitica/Análisis de sentimiento e interacción en los Tweets de Pedro Castillo Terrones/1.png">
+  <img class="d-block d-sm-none mb-0" src="../../geopolitica/Análisis de sentimiento e interacción en los Tweets de Pedro Castillo Terrones/1.png">
+  </div>
+  <br></br>
+</div>
+
+<p>El siguiente problema es que las palabras con mayor frecuencia son, como era de esperarse, artículos, preposiciones, conjunciones, y otros similares:</p>
+<pre><code class="language-r">library(ggplot2)
+
+freq1 <- castillovar_t %>%
+        count(word, sort = TRUE)
+head(freq1, n = 30) %>%
+        ggplot(aes(reorder(word, n), n)) +
+        geom_bar(stat="identity", fill="#1a3a56") +
+        coord_flip() + 
+        xlab("Palabras más usadas") +
+        ylab("Número") +
+        theme_minimal()
+</code></pre>
+
+<div id="1">
+  <div class="wide mt-2 mb-0">
+  <div class="mx-xl-auto" style="max-width:695px">
+  <img class="d-none d-sm-block mb-0" src="../../geopolitica/Análisis de sentimiento e interacción en los Tweets de Pedro Castillo Terrones/2.png">
+  <img class="d-block d-sm-none mb-0" src="../../geopolitica/Análisis de sentimiento e interacción en los Tweets de Pedro Castillo Terrones/2.png">
+</div>
+</div>
+<br></br>
+
+<p>Esas palabras no agregan ninguna información relevante para entender la polaridad de los sentiments, son “palabras vacías” que debemos filtrar. Para ello necesitamos una lista de ese tipo de palabras en español que extraeremos del paquete stopwords:</p>
+
+<pre><code class="language-r">library(stopwords)
+
+#crear una lista de palabras vacias en español
+stopwords_ES <- tibble(stopwords("spanish")) 
+colnames(stopwords_ES) <- "word"
+  
+#Agregamos algunas palabras vacias adicionales (lugares y monedas, etc.)
+custom_stop <- tibble(word = c("lima", "cajamarca", "peru", "0001f134","0001f534", "dolar", "sol", "derecha", "u", "@pedrocastillote", "primero", "0001f1ea", "0001f1f5", "mas", "presidente","hoy", "fe0f", "#siempreconelpueblo","#palabrademaestro"))
+stopwords_ES <- bind_rows(custom_stop, stopwords_ES)
+rm(custom_stop)
+  
+#filtrado con la lista de palabras vacias
+castillovar_tf <- castillovar_t %>% 
+ filter(!word %in% stopwords_ES$word,
+         str_detect(word, "[a-z]"))
+str(castillovar_tf)
+</code></pre>
+
+<div id="1">
+  <div class="wide mt-2 mb-0">
+  <div class="mx-xl-auto" style="max-width:695px">
+  <img class="d-none d-sm-block mb-0" src="../../geopolitica/Análisis de sentimiento e interacción en los Tweets de Pedro Castillo Terrones/3.png">
+  <img class="d-block d-sm-none mb-0" src="../../geopolitica/Análisis de sentimiento e interacción en los Tweets de Pedro Castillo Terrones/3.png">
+  </div>
+</div>
+  <br></br>
+
+<p>Ahora sí podemos observar las palabras más utilizadas por Pedro Castillo (@PedroCastilloTe):</p>
+
+<pre><code class="language-r">freq2 <- castillovar_tf %>%
+        count(word, sort = TRUE)
+head(freq2, n = 30) %>%
+        ggplot(aes(reorder(word, n), n)) +
+        geom_bar(stat="identity", fill="#1a3a56") +
+        coord_flip() +
+        xlab("Palabras más usadas") +
+        ylab("Número")+
+        theme_minimal()
+
+  </code></pre>
+  
+  <div id="1">
+    <div class="wide mt-2 mb-0">
+    <div class="mx-xl-auto" style="max-width:695px">
+    <img class="d-none d-sm-block mb-0" src="../../geopolitica/Análisis de sentimiento e interacción en los Tweets de Pedro Castillo Terrones/4.png">
+    <img class="d-block d-sm-none mb-0" src="../../geopolitica/Análisis de sentimiento e interacción en los Tweets de Pedro Castillo Terrones/4.png">
+    </div>
+  </div>
+
+<h2 id="Analisis-de-datos">Análisis de datos</h2>
+
+<p>El análisis de sentimiento nos permite aproximarnos a la intención emocional de los tweets que lanza el presidente Pedro Castillo. Este tipo de análisis puede basarse en el análisis de palabras o relaciones de palabras (n-gramas) y se pueden evaluar diferentes escalas de sentimiento (binarias, ponderadas, etc.).</p>
+<p>Elegimos el enfoque de “bolsa de palabras”, el nivel del unigrama y la escala binaria, como una primera aproximación expedita. Ahora bien, existen diversos métodos para evaluar los sentiments en los textos, desde la anotación manual hasta el uso de machine learning, pero aquí utilizaremos el método basado en diccionario (Silge y Robinson 2017).</p>
+<p>Este método conste en utilizar un diccionario en formato clave:valor para evaluar cada palabra. Se considera al tweet como una combinación de palabras individuales que tienen una carga emocional y la proporción de esas palabras nos da el sentimiento general del tweet, como posteriormente reflejaremos en un indice de sentimiento.</p>
+<p>Los diccionarios para análisis de sentimiento en español son escasos y poco desarrollados. Después de una larga búsqueda pudimos encontrar el diccionario iSol que está formado por 8135 palabras, 2.509 positivas y 5.626 negativas, dejando a un lado las palabras emocionalmente neutras. Este diccionario a su vez está basado en otro diccionario en inglés bastante testeado como es el de Bing Liu, siendo una traducción especializada y mejorada.</p>
+
+
+<pre><code class="language-r">#cargamos y adecuamos el diccionario al formato requerido.
+negativas <- read_csv("isol/negativas_mejorada.csv", col_names = "word") %>%
+  mutate(sentiment = "negativo") 
+</code></pre>
+
+<div id="1">
+  <div class="wide mt-2 mb-0">
+  <div class="mx-xl-auto" style="max-width:695px">
+  <img class="d-none d-sm-block mb-0" src="../../geopolitica/Análisis de sentimiento e interacción en los Tweets de Pedro Castillo Terrones/5.png">
+  <img class="d-block d-sm-none mb-0" src="../../geopolitica/Análisis de sentimiento e interacción en los Tweets de Pedro Castillo Terrones/5.png">
+  </div>
+</div>
+</div>
+
+<pre><code class="language-r">positivas <- read_csv("isol/positivas_mejorada.csv", col_names = "word") %>%
+  mutate(sentiment = "positivo")
+</code></pre>
+
+<a href="https://josuemzx.github.io/SentimentAnalysis-tweets/">Leer más...</a>
+
+
+
+
+
+
+
+
+
+
+
+
+  <footer class="post-footer post-footer--authors container js-post-footer-authors">
+  <div data-order="0">
+    <hr>
+    <div class="row" id="authors">
+      <div class="col">Autor</div>
+      <div class="col js-post-footer-authors-list ">
+        <span class="post-author"><a class="fade" href="../authors/josue/index.html">Josue Huaman</a></span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+<footer class="post-footer post-footer--tags container js-post-footer-tags">
+  <div>
+    <hr>
+    <div class="row" id="tags">
+      <div class="col">Archivado en</div>
+      <div class="col js-post-footer-tags-list">
+        <span class="post-tag"><a class="fade" href="../../tags/geopolitica/index.html">Geopolítica</a></span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+
+</article>
+  
+
+  
+
+
+<footer class="footer container medium-xsmall-copy line-height-1.6">
+  <a href="../../index.html" class="d-block footer-logo mb-1.75" style="margin-left:-1px"><IMG SRC="../../cdn/Logo-josue-b.png"></a>
+  <div class="row mb-1">
+    
+    <div class="col-6 col-lg">
+      <ul class="mb-2">
+        <div class="small-caps mb-1/3">Contacto</div>
+        
+        <li><a class="fade" href="mailto:esai.huaman@gmail.com">Email</a></li>
+        
+        <li><a class="fade" href="https://twitter.com/Josuehu_">Twitter</a></li>
+      
+        <li><a class="fade" href="https://www.linkedin.com/in/esai-huaman-meza/">LinkedIn</a></li>
+      
+        <li><a class="fade" href="http://calendly.com/josuehuaman">Calendly</a></li>      
+ 
+      </ul>
+    </div>
+  
+    <div class="col-6 col-lg">
+      <ul class="mb-2">
+        <div class="small-caps mb-1/3">Links</div>
+        
+        <li><a class="fade" href="https://tinyletter.com/josue">Newsletter</a></li>
+        
+        <li><a class="fade" href="index.html">Travel Blog</a></li>
+      
+        <li><a class="fade" href="http://github.com/josuemzx">Github</a></li>
+      
+        <li><a class="fade" href="https://github.com/josuemzx/blog">Source Code</a></li>          
+    </ul>
+    </div>
+  
+    <div class="col-6 col-lg">
+      <ul class="mb-2">
+        <div class="small-caps mb-1/3">Categorías</div>
+        
+          <li><a class="fade" href="crypto/index.html">Crypto</li>
+        
+          <li><a class="fade" href="../../tags/geopolitica/index.html">Geopolítica</a></li>
+        
+          <li><a class="fade" href="life/index.html">Life</a></li>
+        
+          <li><a class="fade" href="machine-learning/index.html">Machine Learning</a></li>
+       
+      </ul>
+    </div>
+  
+    <div class="col-6 col-lg">
+      <ul class="mb-2">
+        <div class="small-caps mb-1/3">Información</div>
+        
+          <li><a class="fade" href="index.html">About</a></li>
+        
+          <li><a class="fade" href="https://josuem.substack.com/p/libros">Libros</a></li>
+        
+          <li><a class="fade" href="archivos/index.html">Archivos</a></li>       
+      </ul>
+    </div>
+    </div>
+  
+</div>
+<div class="row align-items-center mb-0.125">
+  <div class="col-12 col-md mb-0.5">
+    <a class="fade" style="margin-top:1px" href="index.html">© Josue Huaman 2022</a>&emsp;<wbr> <!--<a class="fade" style="margin-top:1px" href="privacy/index.html">Privacy&nbsp;Policy</a>&emsp;<wbr><a class="fade" style="margin-top:1px" href="terms/index.html">Terms&nbsp;of&nbsp;Use</a> -->
+  </div>
+  <div class="col-12 col-md-4 col-lg-4 col-xl-3 mb-0.5">
+    <div class="d-block d-md-none" style="font-size:1.333333rem"> <a class="fade icon" href="https://twitter.com/Josuehu_">twitter</a> &ensp; <a class="fade icon" href="https://youtube.com/channel/UCN21zdA_CvhdsCCVTvkCiEQ">youtube</a> &ensp; <a class="fade icon" href="https://github.com/josuemzx/">github</a> &ensp; <a class="fade icon" href="https://soundcloud.com/josuemzx">soundcloud</a> &ensp; <a class="fade icon" href="https://www.linkedin.com/in/esai-huaman-meza/">linkedin</a> &ensp; <a class="fade icon" href="https://facebook.com">facebook</a> </div> <div class="d-none d-md-block" style="font-size:1.166667rem"> <div class="d-flex justify-content-between"> <a class="fade icon" href="https://twitter.com/Josuehu_">twitter</a> &ensp; <a class="fade icon" href="https://youtube.com/channel/UCN21zdA_CvhdsCCVTvkCiEQ">youtube</a> &ensp; <a class="fade icon" href="https://github.com/josuemzx">github</a> &ensp; <a class="fade icon" href="https://soundcloud.com/josuemzx">soundcloud</a> &ensp; <a class="fade icon" href="https://www.linkedin.com/in/esai-huaman-meza/">linkedin</a> &ensp; <a class="fade icon" href="https://facebook.com">facebook</a> </div> </div>
+  </div>
+</div>
+</footer>
+<script type="text/javascript" src="../../assets/scripts/mainc205.js?v=faca4a392d"></script>
+
+
+  
+</body>
+</html>
