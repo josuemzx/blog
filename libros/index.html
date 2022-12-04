@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<!--
+
+    888                                      888   |
+    888  e88~-_   d88~\ 888  888  e88~~8e    888___| 888  888   /~~~8e  888-~88e-~88e   /~~~8e  888-~88e
+    888 d888   i C888   888  888 d888  88b   888   | 888  888       88b 888  888  888       88b 888  888
+    888 8888   |  Y88b  888  888 8888__888   888   | 888  888  e88~-888 888  888  888  e88~-888 888  888
+|   88P Y888   '   888D 888  888 Y888    ,   888   | 888  888 C888  888 888  888  888 C888  888 888  888
+ \__8"   "88_-~  \_88P  "88_-888  "88___/    888   | "88_-888  "88_-888 888  888  888  "88_-888 888  888
+
+-->
+<html lang="es">
+
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Libros</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <link rel="stylesheet" type="text/css" href="../assets/styles/allc205.css?v=faca4a392d" />
+  <style>:root { --fg: 0, 0, 0; --bg: 246, 246, 244;}#alignment-logo { width: 6rem; opacity: 0.2;}.alignment-cover { width: 110px; height: 110px;}@media (min-width: 720px) { .alignment-cover { width: 120px; height: 120px; }}.aspect-alignment-custom:before { padding-top:52.734375% !important;}.video-cover #alignment-video-cover-wrap .fluidvids { /* reset video-cover fluidvids behavior */ visibility: visible; position: unset; top: unset; z-index: unset;}</style>
+
+  <script type="text/javascript">document.documentElement.className = 'js';</script>
+  <link rel="icon" type="image/svg+xml" href="../assets/images/faviconc205.svg?v=faca4a392d">
+  <link rel="mask-icon" href="../assets/images/mask-iconc205.svg?v=faca4a392d" color="#000000">
+  <link rel="icon" href="../content/images/size/w256h256/2020/09/icon-1.png" type="image/png" />
+    <link rel="canonical" href="index.html" />
+    <meta name="referrer" content="no-referrer-when-downgrade" />
+    
+    <meta property="og:site_name" content="Josue Huaman" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Aligning AI systems with human intent" />
+    <meta property="og:description" content="OpenAI is an AI research and deployment company. Our mission is to ensure that artificial general intelligence benefits all of humanity." />
+    <meta property="og:url" content="https://openai.com/alignment/" />
+    <meta property="og:image" content="https://openai.com/content/images/2022/02/Screen-Shot-2022-02-11-at-11.41.08_o.jpg" />
+    <meta property="article:published_time" content="2022-02-15T18:00:20.000Z" />
+    <meta property="article:modified_time" content="2022-02-15T18:00:20.000Z" />
+    <meta property="article:publisher" content="https://www.facebook.com/openai.research" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Aligning AI systems with human intent" />
+    <meta name="twitter:description" content="OpenAI is an AI research and deployment company. Our mission is to ensure that artificial general intelligence benefits all of humanity." />
+    <meta name="twitter:url" content="https://openai.com/alignment/" />
+    <meta name="twitter:image" content="https://openai.com/content/images/2022/02/Screen-Shot-2022-02-11-at-11.41.08_o.jpg" />
+    <meta name="twitter:label1" content="Written by" />
+    <meta name="twitter:data1" content="OpenAI" />
+    <meta name="twitter:site" content="@openai" />
+    <meta property="og:image:width" content="2160" />
+    <meta property="og:image:height" content="1140" />
+    
+    <script type="application/ld+json">
+
+    </script>
+
+    <meta name="generator" content="Ghost 5.22" />
+    <link rel="alternate" type="application/rss+xml" title="OpenAI" href="../blog/rss/index.html" />
+    <script defer src="../../cdn.jsdelivr.net/ghost/portal%40_2.19/umd/portal.min.js" data-ghost="https://openai.com/" data-key="23f7e2ddba37b787ce1ea90e77" data-api="https://openaidev.ghost.io/ghost/api/content/" crossorigin="anonymous"></script><style id="gh-members-styles">.gh-post-upgrade-cta-content,
+.gh-post-upgrade-cta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-align: center;
+    width: 100%;
+    color: #ffffff;
+    font-size: 16px;
+}
+
+.gh-post-upgrade-cta-content {
+    border-radius: 8px;
+    padding: 40px 4vw;
+}
+
+.gh-post-upgrade-cta h2 {
+    color: #ffffff;
+    font-size: 28px;
+    letter-spacing: -0.2px;
+    margin: 0;
+    padding: 0;
+}
+
+.gh-post-upgrade-cta p {
+    margin: 20px 0 0;
+    padding: 0;
+}
+
+.gh-post-upgrade-cta small {
+    font-size: 16px;
+    letter-spacing: -0.2px;
+}
+
+.gh-post-upgrade-cta a {
+    color: #ffffff;
+    cursor: pointer;
+    font-weight: 500;
+    box-shadow: none;
+    text-decoration: underline;
+}
+
+.gh-post-upgrade-cta a:hover {
+    color: #ffffff;
+    opacity: 0.8;
+    box-shadow: none;
+    text-decoration: underline;
+}
+
+.gh-post-upgrade-cta a.gh-btn {
+    display: block;
+    background: #ffffff;
+    text-decoration: none;
+    margin: 28px 0 0;
+    padding: 8px 18px;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.gh-post-upgrade-cta a.gh-btn:hover {
+    opacity: 0.92;
+}</style>
+    <script defer src="../../cdn.jsdelivr.net/ghost/sodo-search%40_1.1/umd/sodo-search.min.js" data-key="23f7e2ddba37b787ce1ea90e77" data-styles="https://cdn.jsdelivr.net/ghost/sodo-search@~1.1/umd/main.css" data-sodo-search="https://openaidev.ghost.io/" crossorigin="anonymous"></script>
+    <script defer src="../public/cards.minc205.js?v=faca4a392d"></script>
+    <link rel="stylesheet" type="text/css" href="../public/cards.minc205.css?v=faca4a392d">
+    <script defer src="../public/member-attribution.minc205.js?v=faca4a392d"></script><style>:root {--ghost-accent-color: #15171A;}</style>
+</head>
+<body>
+  
+  <header class="bg-fg color-bg">
+    <nav class="nav container" data-url="/tags/geopolítica/">
+    <div class="nav-row row align-items-center">
+      <div class="d-none d-sm-block col-sm nav-symbol-wrap">
+        <a href="../../index.html" class="nav-symbol"><IMG SRC="../cdn/Logo-josue-w.png"></a>
+      </div>
+      <div class="col col-sm-auto">
+        <ul class="d-flex flex-row align-items-center justify-content-between small-caps">
+          <div class="d-sm-none nav-symbol-wrap">
+            <a href="../../index.html" class="nav-symbol"><IMG SRC="../cdn/Logo-josue-bM.png"></a>
+          </div>  
+                    
+          <li class="ml-sm-1.75" style="margin-top:0.5px"><a class="nav-link " href="https://josuem.substack.com/p/recursos-abiertos-para-estudiar-data" data-slug="about" style="color:#fff;">Cursos</a></li>
+  
+           <li class="ml-sm-1.75" style="margin-top:0.5px"><a class="nav-link " href="https://josuem.substack.com/p/libros" data-slug="about" style="color:#fff;">Libros</a></li>
+  
+           <li class="ml-sm-1.75" style="margin-top:0.5px"><a class="nav-link " href="../cdn/media/RESUME.pdf" data-slug="about" style="color:#fff;">CV</a></li>
+  
+           <li class="ml-sm-1.75" style="margin-top:0.5px"><a class="nav-link " href="../about/index.html" data-slug="about" style="color:#fff;">About</a></li>
+         </ul>
+    </div>
+  </div>
+</nav>
+
+</header>
+<article class="post" id="post-alignment">
+
+  <div class="bg-fg color-bg pt-6">
+    <div class="container mb-2 mb-md-3">
+      <div class="max-width-narrow">
+        <h1 class="balance-text xxlarge-copy mb-1">Somos en la medida de como gastamos nuestro tiempo</h1>
+        
+        <div class="js-widow xlarge-small"><p> aquí un poco más sobre mí en los últimos años:</p>
+</div>
+      </div>
+
+      <div class="mt-2.5">
+        <div class="d-flex align-items-center">
+          <div class="d-flex alignment-cover mr-0.75">
+            <img src="../cdn/alignment-blog-header-thin.jpg" />
+          </div>
+
+          <div class="d-flex flex-column align-items-start color-bg-white medium-small-copy">
+            <a href="../blog/our-approach-to-alignment-research/index.html" class="mt-0.25">Our approach to alignment research</a>
+            <a href="../blog/our-approach-to-alignment-research/index.html" class="color-bg-50">August 24 update</a>
+
+            <a class="bg-white btn btn-padded btn-circle icon-next right mt-0.25" href="../blog/our-approach-to-alignment-research/index.html">Read now</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <img src="../cdn/Boy-16356.gif"> 
+  </div>
+
+  <div class="container mb-4 mb-sm-5"> </div>
+
+  <div class="container mb-4">
+    <div class="row">
+      <div class="content">
+        <div class="xlarge-small mb-3">
+          <p>OpenAI’s Alignment research focuses on training AI systems to be helpful, truthful, and safe. Our team is exploring and developing methods to learn from <a href="../blog/deep-reinforcement-learning-from-human-preferences/index.html">human feedback</a>.</p>
+
+<p>Our long-term goal is to achieve <a href="https://arxiv.org/abs/1811.07871">scalable solutions</a> that will align far more capable AI systems of the future — a critical part of <a href="../about/index.html">our mission</a>.</p>
+
+        </div>
+        <div id="alignment-logo" class="mx-auto">
+          <svg viewBox="0 0 320 364" xmlns="http://www.w3.org/2000/svg"><path d="m309.44 83.52-138.88-80.18a21.13 21.13 0 0 0 -21.12 0l-138.88 80.18a21.15 21.15 0 0 0 -10.56 18.3v160.36a21.15 21.15 0 0 0 10.56 18.3l138.88 80.18a21.13 21.13 0 0 0 21.12 0l138.88-80.18a21.15 21.15 0 0 0 10.56-18.3v-160.36a21.15 21.15 0 0 0 -10.56-18.3z" fill="rgba(var(--fg),1)"/><path d="m263.5 114.82a14 14 0 0 0 -13.81-.15l-.32.14-27.37 15.79v-31.6a14.1 14.1 0 0 0 -20.87-12.38l-.32.14-27.31 15.82v-31.58a1.93 1.93 0 0 0 0-.34 14.08 14.08 0 0 0 -21.15-11.89l-95.82 55.31a14.15 14.15 0 0 0 -7.05 12.22v110.7a14.07 14.07 0 0 0 20.74 12.45l.45-.21 27.33-15.84v32a14.08 14.08 0 0 0 21.16 11.89l27.34-15.79v31.5a1.93 1.93 0 0 0 0 .34 14.06 14.06 0 0 0 21.15 11.89l95.82-55.31a14.15 14.15 0 0 0 7-12.22v-110.65a14 14 0 0 0 -7-12.23zm-51.89-22.19a7.29 7.29 0 0 1 3.7 6.4v35.45l-13.38 7.72v-27a.61.61 0 0 0 0-.19v-.36a1.65 1.65 0 0 0 -.07-.32 1.58 1.58 0 0 0 -.09-.31l-.15-.33a.38.38 0 0 0 -.08-.17l-.06-.09-.22-.3-.19-.24-.24-.22-.25-.2a2.61 2.61 0 0 0 -.28-.17l-.28-.16-.31-.11-.31-.1-.3-.05h-1l-.3.07-.32.1a2.41 2.41 0 0 0 -.33.15l-.17.08-30.24 17.45-46.9 27.08-.09.07a1.94 1.94 0 0 0 -.29.21 1.59 1.59 0 0 0 -.24.2 2.39 2.39 0 0 0 -.22.23 1.71 1.71 0 0 0 -.21.26c-.06.09-.12.18-.17.27a1.51 1.51 0 0 0 -.15.28 1.82 1.82 0 0 0 -.11.3 1.7 1.7 0 0 0 -.1.32 1.57 1.57 0 0 0 -.05.3 2.16 2.16 0 0 0 0 .36v31.2l-13.38 7.73v-44.21a7.36 7.36 0 0 1 3.7-6.39l63.47-36.63 32-18.58.22-.09a7.3 7.3 0 0 1 7.39 0zm-16.4 109.7-21.89 12.67v-25.31l21.89-12.63zm-70.42 15.58 21.71-12.53v25.07l-21.71 12.55zm28.43-16.41 13.22-7.63.16-.1v25.07l-13.38 7.73zm20.28-67.95 21.71-12.55v25.07l-21.71 12.55zm-26.82 40.76-21.89 12.63v-25.27l21.89-12.67zm-70.42-40.66 70.42-40.65v25.07l-41.65 24a14.15 14.15 0 0 0 -7 12.26v48.1l-21.77 12.57zm-16.4 109.7a7.3 7.3 0 0 1 -3.7-6.4v-110.64a7.36 7.36 0 0 1 3.7-6.39l95.81-55.32a7.39 7.39 0 0 1 11.08 6.4v35.45l-13.38 7.73v-27.55a1.65 1.65 0 0 0 -.07-.32l-.09-.31-.15-.33a.17.17 0 0 0 -.08-.17l-.07-.09a1.61 1.61 0 0 0 -.21-.3l-.19-.24-.24-.21a1.71 1.71 0 0 0 -.26-.21 1 1 0 0 0 -.27-.17l-.28-.16-.3-.11-.32-.1h-1.33l-.3.07-.32.1-.33.15-.17.08-77.17 44.49-.09.07a1.94 1.94 0 0 0 -.29.21 1.16 1.16 0 0 0 -.24.2 2.39 2.39 0 0 0 -.22.23 1.71 1.71 0 0 0 -.21.26c-.06.09-.12.18-.17.27a1.51 1.51 0 0 0 -.15.28.79.79 0 0 1 -.12.3 1.68 1.68 0 0 0 -.09.32 1.5 1.5 0 0 0 0 .3 2.16 2.16 0 0 0 0 .36v89.18a.61.61 0 0 0 0 .19 2.29 2.29 0 0 0 0 .37.48.48 0 0 0 .08.31 1.58 1.58 0 0 0 .09.31c0 .11.1.22.15.33a.89.89 0 0 0 .08.17v.07a3.39 3.39 0 0 0 .49.64l.08.06a3.2 3.2 0 0 0 .55.42l.21.11a3.21 3.21 0 0 0 .54.22l.21.06a3.47 3.47 0 0 0 .78.1 3.08 3.08 0 0 0 .61-.07h.13a3.5 3.5 0 0 0 .55-.17h.08l.31-.16 77.14-44.53.09-.07a1.94 1.94 0 0 0 .29-.21l.24-.19.22-.24a1.71 1.71 0 0 0 .21-.26c.06-.09.12-.18.17-.27a1.51 1.51 0 0 0 .15-.28c0-.1.08-.2.11-.3a1.7 1.7 0 0 0 .1-.32.61.61 0 0 1 0-.3v-31.61l13.38-7.73v44.22a7.36 7.36 0 0 1 -3.68 6.35l-95.61 55.2-.22.1a7.3 7.3 0 0 1 -7.34 0zm55.94 28a7.39 7.39 0 0 1 -11.08-6.35v-35.48l13.38-7.72v27a.61.61 0 0 0 0 .19 2.16 2.16 0 0 0 0 .36 1.65 1.65 0 0 0 .07.32 1.58 1.58 0 0 0 .09.31l.15.33a.38.38 0 0 0 .08.17l.05.07a3.39 3.39 0 0 0 .49.64l.08.06a3.2 3.2 0 0 0 .55.42l.21.11a3.21 3.21 0 0 0 .54.22l.21.06a3.47 3.47 0 0 0 .78.1 3.08 3.08 0 0 0 .61-.07h.13a3.5 3.5 0 0 0 .55-.17h.08l.31-.16 77.14-44.53.09-.07a1.94 1.94 0 0 0 .29-.21 1.59 1.59 0 0 0 .24-.2 2.39 2.39 0 0 0 .22-.23 1.71 1.71 0 0 0 .21-.26c.06-.09.12-.18.17-.27a1.51 1.51 0 0 0 .15-.28 1.82 1.82 0 0 0 .11-.3 1.7 1.7 0 0 0 .1-.32 1.57 1.57 0 0 0 0-.3 2.16 2.16 0 0 0 0-.36v-31.25l13.38-7.73v44.22a7.36 7.36 0 0 1 -3.7 6.39zm127.94-41-70.42 40.65v-25.07l41.65-24a14.15 14.15 0 0 0 7-12.26v-48.1l21.77-12.57zm20.1 7.34a7.36 7.36 0 0 1 -3.7 6.39l-95.81 55.32a7.39 7.39 0 0 1 -11.08-6.4v-35.46l13.38-7.72v27.55a1.65 1.65 0 0 0 .07.32l.09.31.15.33a.17.17 0 0 0 .08.17v.07a3.45 3.45 0 0 0 .5.64l.07.06a3.2 3.2 0 0 0 .55.42l.21.11a3.21 3.21 0 0 0 .54.22l.21.06a3.47 3.47 0 0 0 .78.1 3.05 3.05 0 0 0 .6-.06h.13a2.72 2.72 0 0 0 .55-.18h.08l.31-.16 77.14-44.53.09-.07a1.94 1.94 0 0 0 .29-.21 1.16 1.16 0 0 0 .24-.2 2.39 2.39 0 0 0 .22-.23 1.71 1.71 0 0 0 .21-.26 1.86 1.86 0 0 0 .26-.28 1.51 1.51 0 0 0 .15-.28c0-.1.08-.2.12-.3a1.68 1.68 0 0 0 .09-.32 1.57 1.57 0 0 0 0-.3 2.16 2.16 0 0 0 0-.36v-89.22a.61.61 0 0 0 0-.19 2.29 2.29 0 0 0 0-.37 1.09 1.09 0 0 0 -.08-.31 1.58 1.58 0 0 0 -.09-.31c0-.11-.1-.22-.15-.33s0-.12-.08-.17l-.06-.09-.21-.3-.2-.24-.24-.21-.25-.22-.27-.16-.29-.16-.3-.11-.32-.1h-.29-1l-.31.07-.32.1-.33.15a.21.21 0 0 0 -.17.08l-71.93 41.52v-15.49l79-45.62.22-.1a7.39 7.39 0 0 1 11.09 6.39z" fill="rgba(var(--bg),1)"/></svg>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="bg-fg color-bg mb-4 pt-3 pb-2">
+    <div class="container">
+      <div class="h3 mb-1.5">Learn More</div>
+
+      <div class="row">
+      
+          <div class="col-12 col-md-4 mb-2">
+            <div class="mb-0.75 xlarge-small-copy line-height-1.2"><a href="../blog/critiques/index.html" class="fade balance-text">AI-Written Critiques Help Humans Notice Flaws</a></div>
+            <a href="../blog/critiques/index.html" class="d-block mb-0.5">
+              
+              Showing model-generated critical comments to humans helps them find flaws in summaries.
+              
+            </a>
+            <a href="../blog/critiques/index.html" class="btn icon-next right">Read more</a>
+          </div>
+          <div class="col-12 col-md-4 mb-2">
+            <div class="mb-0.75 xlarge-small-copy line-height-1.2"><a href="../blog/instruction-following/index.html" class="fade balance-text">Aligning Language Models to Follow Instructions</a></div>
+            <a href="../blog/instruction-following/index.html" class="d-block mb-0.5">
+              
+              We trained language models that are much better than GPT-3 at following user intentions  while also making them more truthful and less toxic.
+              
+            </a>
+            <a href="../blog/instruction-following/index.html" class="btn icon-next right">Read more</a>
+          </div>
+          <div class="col-12 col-md-4 mb-2">
+            <div class="mb-0.75 xlarge-small-copy line-height-1.2"><a href="../blog/learning-to-summarize-with-human-feedback/index.html" class="fade balance-text">Learning to Summarize with Human Feedback</a></div>
+            <a href="../blog/learning-to-summarize-with-human-feedback/index.html" class="d-block mb-0.5">
+              
+              We applied reinforcement learning from human feedback to train language models that are better at summarization.
+              
+            </a>
+            <a href="../blog/learning-to-summarize-with-human-feedback/index.html" class="btn icon-next right">Read more</a>
+          </div>
+      
+      </div>
+
+    </div>
+  </div>
+
+  <div class="container mb-n1">
+    <div class="row">
+      <div class="col-12 col-md-6">
+        <div class="h3 mb-1">More Alignment Research</div>
+      </div>
+      <div class="col-12 col-md-6 medium-small-copy">
+        
+            <div class="mb-1"><a href="../blog/summarizing-books/index.html" class="fade balance-text">Summarizing Books with Human Feedback</a></div>
+            <div class="mb-1"><a href="../blog/amplifying-ai-training/index.html" class="fade balance-text">Learning Complex Goals with Iterated Amplification</a></div>
+            <div class="mb-1"><a href="../blog/debate/index.html" class="fade balance-text">AI Safety via Debate</a></div>
+            <div class="mb-1"><a href="../blog/deep-reinforcement-learning-from-human-preferences/index.html" class="fade balance-text">Learning from Human Preferences</a></div>
+        
+      </div>
+    </div>
+    <hr class="mt-1 mb-2">
+    <div class="row">
+      <div class="col-12 col-md-6">
+        <div class="h3 mb-1">Other OpenAI Safety Projects</div>
+      </div>
+      <div class="col-12 col-md-6 medium-small-copy">
+        
+            <div class="mb-1"><a href="../blog/webgpt/index.html" class="fade balance-text">WebGPT: Improving the Factual Accuracy of Language Models through Web Browsing</a></div>
+            <div class="mb-1"><a href="../blog/improving-language-model-behavior/index.html" class="fade balance-text">Improving Language Model Behavior by Training on a Curated Dataset</a></div>
+            <div class="mb-1"><a href="../blog/multimodal-neurons/index.html" class="fade balance-text">Multimodal Neurons in Artificial Neural Networks</a></div>
+            <div class="mb-1"><a href="../blog/microscope/index.html" class="fade balance-text">OpenAI Microscope</a></div>
+            <div class="mb-1"><a href="../blog/safety-gym/index.html" class="fade balance-text">Safety Gym</a></div>
+        
+      </div>
+    </div>
+  </div>
+
+</article>
+
+
+
+
+
+
+  
+
+<footer class="footer container medium-xsmall-copy line-height-1.6">
+  <a href="../index.html" class="d-block footer-logo mb-1.75" style="margin-left:-1px"><svg id="openai-horizontal" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 936 232"><path d="M667.21,90.58c-13.76,0-23.58,4.7-28.4,13.6L636.22,109V92.9H613.83v97.86h23.55V132.54c0-13.91,7.56-21.89,20.73-21.89,12.56,0,19.76,7.77,19.76,21.31v58.8h23.56v-63C701.43,104.46,688.64,90.58,667.21,90.58ZM553,90.58c-27.79,0-45,17.34-45,45.25v13.74c0,26.84,17.41,43.51,45.44,43.51,18.75,0,31.89-6.87,40.16-21L579,163.68c-6.11,8.15-15.87,13.2-25.55,13.2-14.19,0-22.66-8.76-22.66-23.44v-3.89h65.73V133.32c0-26-17.07-42.74-43.5-42.74Zm22.09,43.15H530.71v-2.35c0-16.11,7.91-25,22.27-25,13.83,0,22.09,8.76,22.09,23.44ZM935.31,76.79V58.07H853.85V76.79h28.56V172H853.85v18.72h81.46V172H906.74V76.79ZM317.65,55.37c-36.38,0-59,22.67-59,59.18v19.74c0,36.5,22.61,59.18,59,59.18s59-22.68,59-59.18V114.55C376.64,78,354,55.37,317.65,55.37Zm34.66,80.27c0,24.24-12.63,38.14-34.66,38.14S283,159.88,283,135.64V113.19c0-24.24,12.64-38.14,34.66-38.14s34.66,13.9,34.66,38.14Zm98.31-45.06c-12.36,0-23.06,5.12-28.64,13.69l-2.53,3.9V92.9h-22.4V224.43h23.56V176.79l2.52,3.74c5.3,7.86,15.65,12.55,27.69,12.55,20.31,0,40.8-13.27,40.8-42.93V133.51c0-21.37-12.63-42.93-41-42.93ZM468.06,149c0,15.77-9.2,25.57-24,25.57-13.8,0-23.43-10.36-23.43-25.18V134.67c0-15,9.71-25.56,23.63-25.56,14.69,0,23.82,9.79,23.82,25.56ZM766.53,58.08,719,190.76h23.93l9.1-28.44h54.64l.09.28,9,28.16h23.92L792.07,58.07Zm-8.66,85.53,21.44-67.08,21.22,67.08Z"/><path d="M212.59,95.12a57.27,57.27,0,0,0-4.92-47.05,58,58,0,0,0-62.4-27.79A57.29,57.29,0,0,0,102.06,1,57.94,57.94,0,0,0,46.79,41.14,57.31,57.31,0,0,0,8.5,68.93a58,58,0,0,0,7.13,67.94,57.31,57.31,0,0,0,4.92,47A58,58,0,0,0,83,211.72,57.31,57.31,0,0,0,126.16,231a57.94,57.94,0,0,0,55.27-40.14,57.3,57.3,0,0,0,38.28-27.79A57.92,57.92,0,0,0,212.59,95.12ZM126.16,216a42.93,42.93,0,0,1-27.58-10c.34-.19,1-.52,1.38-.77l45.8-26.44a7.43,7.43,0,0,0,3.76-6.51V107.7l19.35,11.17a.67.67,0,0,1,.38.54v53.45A43.14,43.14,0,0,1,126.16,216ZM33.57,176.46a43,43,0,0,1-5.15-28.88c.34.21.94.57,1.36.81l45.81,26.45a7.44,7.44,0,0,0,7.52,0L139,142.52v22.34a.67.67,0,0,1-.27.6L92.43,192.18a43.14,43.14,0,0,1-58.86-15.77Zm-12-100A42.92,42.92,0,0,1,44,57.56V112a7.45,7.45,0,0,0,3.76,6.51l55.9,32.28L84.24,162a.68.68,0,0,1-.65.06L37.3,135.33A43.13,43.13,0,0,1,21.53,76.46Zm159,37-55.9-32.28L144,70a.69.69,0,0,1,.65-.06l46.29,26.73a43.1,43.1,0,0,1-6.66,77.76V120a7.44,7.44,0,0,0-3.74-6.54Zm19.27-29c-.34-.21-.94-.57-1.36-.81L152.67,57.2a7.44,7.44,0,0,0-7.52,0L89.25,89.47V67.14a.73.73,0,0,1,.28-.6l46.29-26.72a43.1,43.1,0,0,1,64,44.65ZM78.7,124.3,59.34,113.13a.73.73,0,0,1-.37-.54V59.14A43.09,43.09,0,0,1,129.64,26c-.34.19-.95.52-1.38.77L82.46,53.21a7.45,7.45,0,0,0-3.76,6.51Zm10.51-22.67,24.9-14.38L139,101.63v28.74L114.1,144.75,89.2,130.37Z"/></svg></a>
+  <div class="row mb-1">
+    
+      <div class="col-6 col-lg">
+        <ul class="mb-2">
+          <div class="small-caps mb-1/3">Featured</div>
+          
+            <li><a class="fade" href="../dall-e-2/index.html">DALL·E 2</a></li>
+          
+            <li><a class="fade" href="index.html">Alignment</a></li>
+          
+            <li><a class="fade" href="../blog/instruction-following/index.html">Instruction Following</a></li>
+          
+            <li><a class="fade" href="../blog/summarizing-books/index.html">Summarizing Books</a></li>
+          
+            <li><a class="fade" href="../blog/openai-codex/index.html">OpenAI Codex</a></li>
+          
+            <li><a class="fade" href="../fund/index.html">Startup Fund</a></li>
+          
+        </ul>
+      </div>
+    
+      <div class="col-6 col-lg">
+        <ul class="mb-2">
+          <div class="small-caps mb-1/3">API</div>
+          
+            <li><a class="fade" href="../api/index.html">Overview</a></li>
+          
+            <li><a class="fade" href="../api/pricing/index.html">Pricing</a></li>
+          
+            <li><a class="fade" href="../api/examples/index.html">Examples</a></li>
+          
+            <li><a class="fade" href="../api/docs/index.html">Docs</a></li>
+          
+            <li><a class="fade" href="../api/policies/index.html">Terms & Policies</a></li>
+          
+            <li><a class="fade" href="https://status.openai.com/">Status</a></li>
+          
+            <li><a class="fade" href="../api/login/index.html">Log in</a></li>
+          
+        </ul>
+      </div>
+    
+      <div class="col-6 col-lg">
+        <ul class="mb-2">
+          <div class="small-caps mb-1/3">Blog</div>
+          
+            <li><a class="fade" href="../blog/index.html">Index</a></li>
+          
+            <li><a class="fade" href="../blog/tags/research/index.html">Research</a></li>
+          
+            <li><a class="fade" href="../blog/tags/announcements/index.html">Announcements</a></li>
+          
+            <li><a class="fade" href="../blog/tags/events/index.html">Events</a></li>
+          
+            <li><a class="fade" href="../blog/tags/milestones/index.html">Milestones</a></li>
+          
+        </ul>
+      </div>
+    
+      <div class="col-6 col-lg">
+        <ul class="mb-2">
+          <div class="small-caps mb-1/3">Information</div>
+          
+            <li><a class="fade" href="../about/index.html">About Us</a></li>
+          
+            <li><a class="fade" href="../charter/index.html">Our Charter</a></li>
+          
+            <li><a class="fade" href="../research/index.html">Our Research</a></li>
+          
+            <li><a class="fade" href="../publications/index.html">Publications</a></li>
+          
+            <li><a class="fade" href="../newsroom/index.html">Newsroom</a></li>
+          
+            <li><a class="fade" href="../careers/index.html">Careers</a></li>
+          
+        </ul>
+      </div>
+    
+  </div>
+  <div class="row align-items-center mb-0.125">
+    <div class="col-12 col-md mb-0.5">
+      <a class="fade" style="margin-top:1px" href="../index.html">OpenAI &copy; 2015–2022</a>&emsp;<wbr><a class="fade" style="margin-top:1px" href="../privacy/index.html">Privacy&nbsp;Policy</a>&emsp;<wbr><a class="fade" style="margin-top:1px" href="../terms/index.html">Terms&nbsp;of&nbsp;Use</a>
+    </div>
+    <div class="col-12 col-md-4 col-lg-4 col-xl-3 mb-0.5">
+      <div class="d-block d-md-none" style="font-size:1.333333rem"> <a class="fade icon" href="https://twitter.com/openai">twitter</a> &ensp; <a class="fade icon" href="https://youtube.com/openai">youtube</a> &ensp; <a class="fade icon" href="https://github.com/openai/">github</a> &ensp; <a class="fade icon" href="https://soundcloud.com/openai_audio">soundcloud</a> &ensp; <a class="fade icon" href="https://linkedin.com/company/openai">linkedin</a> &ensp; <a class="fade icon" href="https://facebook.com/openai.research/">facebook</a> </div> <div class="d-none d-md-block" style="font-size:1.166667rem"> <div class="d-flex justify-content-between"> <a class="fade icon" href="https://twitter.com/openai">twitter</a> &ensp; <a class="fade icon" href="https://youtube.com/openai">youtube</a> &ensp; <a class="fade icon" href="https://github.com/openai/">github</a> &ensp; <a class="fade icon" href="https://soundcloud.com/openai_audio">soundcloud</a> &ensp; <a class="fade icon" href="https://linkedin.com/company/openai">linkedin</a> &ensp; <a class="fade icon" href="https://facebook.com/openai.research/">facebook</a> </div> </div>
+    </div>
+  </div>
+</footer>
+  <script type="text/javascript" src="../assets/scripts/mainc205.js?v=faca4a392d"></script>
+  <script src="../player.vimeo.com/api/player.js"></script><script>var coverIframe = document.querySelector('iframe#alignment-video-cover');var coverPlayer = new Vimeo.Player(coverIframe);coverPlayer.ready().then(function () { coverIframe.style.opacity = 1; coverPlayer.play();});var mainIframe = document.querySelector('iframe#alignment-video');var mainPlayer = new Vimeo.Player(mainIframe);var trigger = document.querySelector('.js-video-trigger');trigger.addEventListener('click', function (e) { e.preventDefault(); mainPlayer.play();});mainPlayer.play().then(function () { document.getElementById('alignment-video-play').style.display = 'none';}).catch(function(error) { switch (error.name) { default: break; }});mainPlayer.pause().then(function () { document.getElementById('alignment-video-play').style.display = 'none';}).catch(function(error) { switch (error.name) { default: break; }});</script>
+
+  
+</body>
+
+<!-- Mirrored from openai.com/alignment/ by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 16 Nov 2022 15:45:53 GMT -->
+</html>
